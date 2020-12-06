@@ -90,7 +90,7 @@ form.addEventListener('submit', (e) => {
 
     const input = inputdata.value;
 
-    fetch(`http://localhost:3000/weather?address=${input}`)
+    fetch(`/weather?address=${input}`)
         .then((response) => response.json())
         .then(data => {
             console.log(data)

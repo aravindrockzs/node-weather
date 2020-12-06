@@ -2,7 +2,7 @@ const express = require("express")
 const app = express()
 const hbs = require("hbs")
 const path = require("path")
-const axios = require('axios')
+
 
 
 //require gettemp and geocode from local modules
@@ -31,6 +31,10 @@ hbs.registerPartials(partialsPath)
 //Setup static directory to serve
 
 app.use(express.static(publicDirectory));
+
+// setting port for Heroku
+
+const port = process.env.PORT || 3000
 
 
 
@@ -115,4 +119,4 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => console.log("up and running good"))
+app.listen(port, () => console.log(`Weather app  running good at port  ${port}`))

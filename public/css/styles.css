@@ -1,0 +1,103 @@
+body {
+  color: #333333;
+
+  min-height: 100vh;
+  max-width: 700px;
+  min-width: 400px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  /* fonts */
+  font-size: 16px;
+  font-family: arial;
+  text-decoration: none;
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+nav {
+  background-color: black;
+  padding: 5px;
+  margin: 15px 0;
+}
+
+header a {
+  color: white;
+  padding-left: 5px;
+  text-decoration: none;
+}
+
+img {
+  max-width: 250px;
+  margin: 20px 0;
+  height: auto;
+}
+
+#map {
+  margin: 15px auto;
+  height: 300px;
+  width: 100%;
+  min-width: 450px;
+  border: 2px solid black;
+}
+
+footer {
+  background-color: teal;
+  margin: 8px auto;
+  color: white;
+  height: 30px;
+
+  /* font */
+  font-size: 1.2em;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+#getweather > button {
+  padding: 8px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
+
+#button-location {
+  padding: 8px;
+  margin: 8px 0px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
+
+input {
+  padding: 8px;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 400px) {
+  body {
+    min-width: 360px;
+    font-size: 0.8em;
+    color: springgreen;
+  }
+  footer {
+    width: 150px;
+  }
+}

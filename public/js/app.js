@@ -7,6 +7,8 @@ let p1 = document.querySelector("body > div > p.Location");
 
 let p2 = document.querySelector("body > div > p.forecast");
 
+let p3 = document.querySelector("body > div > p.maxmin");
+
 let locbutton = document.querySelector("#button-location");
 
 let showmap = document.querySelector("#map");
@@ -32,7 +34,7 @@ callback = ({ coords: { latitude }, coords: { longitude } }) => {
         .then(data => fetch(`http://localhost:3000/weather?address=${data.name}`))
         .then((response) => response.json())
         .then(data => {
-            console.log(data)
+
 
             if (data.location === undefined) {
                 p2.innerText = '',
@@ -42,6 +44,8 @@ callback = ({ coords: { latitude }, coords: { longitude } }) => {
 
             p1.innerText = data.location;
             p2.innerText = data.temperature;
+            p3.innerText = data.minmax;
+
 
 
 
@@ -93,7 +97,7 @@ form.addEventListener('submit', (e) => {
     fetch(`/weather?address=${input}`)
         .then((response) => response.json())
         .then(data => {
-            console.log(data)
+
 
             if (data.error === 'You must provide address') {
                 p1.innerText = 'Please enter a valid location',
@@ -112,6 +116,7 @@ form.addEventListener('submit', (e) => {
 
             p1.innerText = data.location;
             p2.innerText = data.temperature;
+            p3.innerText = data.minmax;
 
             mapboxgl.accessToken = 'pk.eyJ1IjoiYXJhdmluZHJvY2t6cyIsImEiOiJja2h0eHgxaW00b3BwMnRsNmxxeXV0NmtuIn0.MSIjBy1fRCHdbSqenevI9w';
             var map = new mapboxgl.Map({

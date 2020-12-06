@@ -78,7 +78,8 @@ app.get('/weather', (req, res) => {
                 location,
                 latitude,
                 longitude,
-                'temperature': `${data.main.temp}*C`
+                'temperature': `${data.main.temp}*C`,
+                'minmax': `Min temperature:${data.main.temp_min}*C Max temperature ${data.main.temp_max}*C`
             })
 
         })

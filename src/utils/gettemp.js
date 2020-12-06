@@ -7,10 +7,9 @@ gettemp = (lat, lon, callback) => {
 
     axios.get(url)
         .then(function (response) {
-            // const temp = response.data.main.temp;
 
-            // console.log(`The temperature is ${temp} * C`);
             callback(undefined, response.data)
+            // console.log(response.data)
 
 
         }).catch(function (err) {
